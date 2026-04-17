@@ -1,0 +1,27 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        cormorant: ["Cormorant Garamond", "Georgia", "serif"],
+        dm: ["DM Sans", "system-ui", "sans-serif"],
+      },
+      colors: {
+        wabi: {
+          bg: "#FAFAF8",
+          text: "#1A1A1A",
+          accent: "#B85C2C",
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
