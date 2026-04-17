@@ -1,14 +1,47 @@
 "use client";
 
-import { useForm, ValidationError } from "@formspree/react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function ContactForm() {
-  const [state, handleSubmit] = useForm("mwvaorkg");
+type FormState = "idle" | "submitting" | "succeeded" | "error";
 
-  if (state.succeeded) {
+export function ContactForm() {
+  const [state, setState] = useState<FormState>("idle");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setState("submitting");
+    setErrorMsg(null);
+
+    const data = new FormData(e.currentTarget);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mwvaorkg", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setState("succeeded");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        const json = await res.json();
+        const msg =
+          json.errors?.[0]?.message ?? "Une erreur est survenue. Réessayez.";
+        setErrorMsg(msg);
+        setState("error");
+      }
+    } catch {
+      setErrorMsg("Impossible d'envoyer le message. Vérifiez votre connexion.");
+      setState("error");
+    }
+  };
+
+  if (state === "succeeded") {
     return (
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -38,8 +71,6 @@ export function ContactForm() {
   const labelClass =
     "block text-[11px] tracking-[0.3em] uppercase font-['DM_Sans'] text-[#1A1A1A]/55 mb-2";
 
-  const errorClass = "mt-1 text-[11px] text-red-400 font-['DM_Sans']";
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -55,7 +86,6 @@ export function ContactForm() {
             placeholder="Marie Dupont"
             className={inputClass}
           />
-          <ValidationError field="name" errors={state.errors} className={errorClass} />
         </div>
 
         <div>
@@ -70,7 +100,6 @@ export function ContactForm() {
             placeholder="marie@example.com"
             className={inputClass}
           />
-          <ValidationError field="email" errors={state.errors} className={errorClass} />
         </div>
       </div>
 
@@ -103,12 +132,15 @@ export function ContactForm() {
             "focus:outline-none focus:border-[#B85C2C] transition-colors duration-300 resize-none",
           )}
         />
-        <ValidationError field="message" errors={state.errors} className={errorClass} />
       </div>
+
+      {errorMsg && (
+        <p className="text-[12px] text-red-400 font-['DM_Sans']">{errorMsg}</p>
+      )}
 
       <button
         type="submit"
-        disabled={state.submitting}
+        disabled={state === "submitting"}
         className={cn(
           "group relative overflow-hidden inline-flex items-center",
           "px-10 py-4 bg-[#B85C2C] text-white",
@@ -117,7 +149,7 @@ export function ContactForm() {
         )}
       >
         <span className="mr-10 transition-opacity duration-500 group-hover:opacity-0">
-          {state.submitting ? "Envoi…" : "Envoyer le message"}
+          {state === "submitting" ? "Envoi…" : "Envoyer le message"}
         </span>
         <i className="absolute right-1 top-1 bottom-1 grid w-9 place-items-center transition-all duration-500 bg-white/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
           <ChevronRight size={15} />
