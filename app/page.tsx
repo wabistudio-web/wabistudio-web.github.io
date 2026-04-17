@@ -244,7 +244,7 @@ function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <Image
-              src="/BannerWABI.png"
+              src="/assets/BannerWABI.png"
               alt="WABI Studio"
               width={160}
               height={32}

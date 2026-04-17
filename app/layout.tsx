@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Studio de design web fondé sur les principes du wabi-sabi. L'épure comme philosophie, l'excellence comme standard.",
   icons: {
-    icon: "/WABIcon.png",
+    icon: "/assets/WABIcon.png",
   },
 };
 
