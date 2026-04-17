@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WABI Studio — Design Web d'Exception",
+  title: "WABI Studio",
   description:
     "Studio de design web fondé sur les principes du wabi-sabi. L'épure comme philosophie, l'excellence comme standard.",
   icons: {
