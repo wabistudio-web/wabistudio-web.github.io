@@ -259,7 +259,7 @@ function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] tracking-wide text-[#1A1A1A]/55 hover:text-[#1A1A1A] transition-colors duration-300 font-['DM_Sans']"
+                className="text-[13px] tracking-wide text-[#1A1A1A]/55 hover:text-[#1A1A1A] transition-colors duration-300 font-dm"
               >
                 {link.label}
               </a>
@@ -269,7 +269,7 @@ function Header() {
               href="#contact"
               className={cn(
                 "group relative overflow-hidden inline-flex items-center",
-                "text-[12px] tracking-[0.18em] uppercase font-['DM_Sans']",
+                "text-[12px] tracking-[0.18em] uppercase font-dm",
                 "border border-[#B85C2C] text-[#B85C2C] px-6 py-2.5",
                 "hover:text-white transition-colors duration-500",
               )}
@@ -314,7 +314,7 @@ function Header() {
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "py-4 font-['Cormorant_Garamond'] text-2xl font-light text-[#1A1A1A]",
+                      "py-4 font-cormorant text-2xl font-light text-[#1A1A1A]",
                       "border-b border-[#1A1A1A]/6 last:border-0",
                       "hover:text-[#B85C2C] hover:pl-2 transition-all duration-300",
                     )}
@@ -326,7 +326,7 @@ function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="py-4 text-center text-[12px] tracking-[0.25em] uppercase font-['DM_Sans'] bg-[#B85C2C] text-white hover:bg-[#A04E25] transition-colors"
+                className="py-4 text-center text-[12px] tracking-[0.25em] uppercase font-dm bg-[#B85C2C] text-white hover:bg-[#A04E25] transition-colors"
               >
                 Démarrer un projet
               </a>
@@ -346,59 +346,39 @@ function HeroSection() {
       <section className="min-h-screen flex flex-col items-center justify-center px-8">
         <div className="text-center max-w-5xl mx-auto w-full">
           {/* Brand label */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-10 flex items-center justify-center gap-4"
-          >
+          <div className="hero-1 mb-10 flex items-center justify-center gap-4">
             <span className="block w-10 h-px bg-[#B85C2C]/35" />
-            <span className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans']">
+            <span className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm">
               WABI Studio
             </span>
             <span className="block w-10 h-px bg-[#B85C2C]/35" />
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Cormorant_Garamond'] font-light leading-[1.06] text-[#1A1A1A] text-[clamp(3rem,8vw,6.5rem)]"
-          >
+          <h1 className="hero-2 font-cormorant font-light leading-[1.06] text-[#1A1A1A] text-[clamp(3rem,8vw,6.5rem)]">
             L&apos;essentiel,
             <br />
             <em className="text-[#B85C2C] not-italic">magnifié.</em>
-          </motion.h1>
+          </h1>
 
-          {/* Animated subtitle — hero_text.txt (AnimatedTextCycle) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 text-base md:text-lg font-['DM_Sans'] font-light text-[#1A1A1A]/50 max-w-lg mx-auto leading-relaxed"
-          >
+          {/* Animated subtitle */}
+          <div className="hero-3 mt-7 text-base md:text-lg font-dm font-light text-[#1A1A1A]/50 max-w-lg mx-auto leading-relaxed">
             Studio de design spécialisé en{" "}
             <AnimatedTextCycle
               words={["sites d'exception", "identités visuelles", "expériences digitales", "narrations visuelles"]}
               interval={3200}
               className="text-[#B85C2C]"
             />
-          </motion.div>
+          </div>
 
-          {/* CTA — GetStartedButton animation from CTA_button.txt */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+          {/* CTA */}
+          <div className="hero-4 mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#contact"
               className={cn(
                 "group relative overflow-hidden inline-flex items-center",
                 "px-9 py-4 bg-[#B85C2C] text-white",
-                "font-['DM_Sans'] text-[12px] tracking-[0.22em] uppercase",
+                "font-dm text-[12px] tracking-[0.22em] uppercase",
               )}
             >
               <span className="mr-10 transition-opacity duration-500 group-hover:opacity-0">
@@ -412,31 +392,22 @@ function HeroSection() {
               href="#realisations"
               className={cn(
                 "inline-block px-9 py-4 border border-[#1A1A1A]/18 text-[#1A1A1A]/65",
-                "font-['DM_Sans'] text-[12px] tracking-[0.22em] uppercase",
+                "font-dm text-[12px] tracking-[0.22em] uppercase",
                 "hover:border-[#B85C2C] hover:text-[#B85C2C] transition-all duration-300",
               )}
             >
               Voir les réalisations
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1 }}
-          className="mt-24 flex flex-col items-center gap-3"
-        >
-          <span className="text-[9px] tracking-[0.5em] text-[#1A1A1A]/25 uppercase font-['DM_Sans']">
+        <div className="hero-5 mt-24 flex flex-col items-center gap-3">
+          <span className="text-[9px] tracking-[0.5em] text-[#1A1A1A]/25 uppercase font-dm">
             Défiler
           </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="w-px h-12 bg-gradient-to-b from-[#B85C2C]/30 to-transparent"
-          />
-        </motion.div>
+          <div className="hero-bounce w-px h-12 bg-gradient-to-b from-[#B85C2C]/30 to-transparent" />
+        </div>
       </section>
     </SpotlightBackground>
   );
@@ -475,13 +446,13 @@ function RealisationsSection() {
           variants={fadeUp}
           className="mb-20"
         >
-          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-5">
+          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
             Réalisations
           </p>
-          <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
+          <h2 className="font-cormorant text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
             Projets récents
           </h2>
-          <p className="mt-4 text-[#1A1A1A]/45 font-['DM_Sans'] font-light text-base max-w-md leading-relaxed">
+          <p className="mt-4 text-[#1A1A1A]/45 font-dm font-light text-base max-w-md leading-relaxed">
             Chaque projet est une collaboration unique, façonnée avec précision et intention.
           </p>
         </motion.div>
@@ -525,15 +496,15 @@ function PricingSection() {
           variants={fadeUp}
           className="mb-20"
         >
-          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-5">
+          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
             Tarifs
           </p>
-          <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
+          <h2 className="font-cormorant text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
             Des offres claires,
             <br />
             <em className="text-[#B85C2C] not-italic">sans surprise.</em>
           </h2>
-          <p className="mt-4 text-[#1A1A1A]/45 font-['DM_Sans'] font-light text-base max-w-md leading-relaxed">
+          <p className="mt-4 text-[#1A1A1A]/45 font-dm font-light text-base max-w-md leading-relaxed">
             Chaque formule est pensée pour offrir un maximum de valeur, à l'essentiel.
           </p>
         </motion.div>
@@ -561,10 +532,10 @@ function PricingSection() {
           className="mt-10 border border-[#1A1A1A]/8 bg-[#FAFAF8] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
         >
           <div>
-            <p className="font-['Cormorant_Garamond'] text-xl text-[#1A1A1A] font-light">
+            <p className="font-cormorant text-xl text-[#1A1A1A] font-light">
               Un projet hors-norme ?
             </p>
-            <p className="mt-1 font-['DM_Sans'] text-[13px] text-[#1A1A1A]/50 font-light">
+            <p className="mt-1 font-dm text-[13px] text-[#1A1A1A]/50 font-light">
               Parlez-nous de votre vision — nous construisons des solutions sur-mesure.
             </p>
           </div>
@@ -573,7 +544,7 @@ function PricingSection() {
             className={cn(
               "group relative overflow-hidden inline-flex items-center shrink-0",
               "px-8 py-3.5 border border-[#1A1A1A]/20 text-[#1A1A1A]",
-              "font-['DM_Sans'] text-[12px] tracking-[0.2em] uppercase",
+              "font-dm text-[12px] tracking-[0.2em] uppercase",
               "hover:border-[#B85C2C] hover:text-[#B85C2C] transition-all duration-300",
             )}
           >
@@ -603,13 +574,13 @@ function ClientsFeedbackSection() {
           variants={fadeUp}
           className="mb-20 text-center"
         >
-          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-5">
+          <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
             Témoignages
           </p>
-          <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-light text-[#FAFAF8] leading-tight">
+          <h2 className="font-cormorant text-5xl md:text-6xl font-light text-[#FAFAF8] leading-tight">
             Ce qu&apos;ils en disent
           </h2>
-          <p className="mt-5 text-[#FAFAF8]/40 font-['DM_Sans'] font-light text-base max-w-sm mx-auto leading-relaxed">
+          <p className="mt-5 text-[#FAFAF8]/40 font-dm font-light text-base max-w-sm mx-auto leading-relaxed">
             La confiance de nos clients est notre meilleure réalisation.
           </p>
         </motion.div>
@@ -646,15 +617,15 @@ function FaqSection() {
             variants={fadeUp}
             className="max-w-md"
           >
-            <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-5">
+            <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
               FAQ
             </p>
-            <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
+            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
               Questions
               <br />
               <em className="text-[#B85C2C] not-italic">fréquentes</em>
             </h2>
-            <p className="mt-6 text-[#1A1A1A]/45 font-['DM_Sans'] font-light text-base leading-relaxed">
+            <p className="mt-6 text-[#1A1A1A]/45 font-dm font-light text-base leading-relaxed">
               Tout ce que vous devez savoir avant de démarrer votre projet avec nous. Une question qui manque ?
               Écrivez-nous.
             </p>
@@ -679,8 +650,8 @@ function FaqSection() {
                   transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="border-b border-[#1A1A1A]/6 pb-4"
                 >
-                  <p className="font-['DM_Sans'] text-[14px] text-[#1A1A1A] font-medium">{item.q}</p>
-                  <p className="mt-1.5 font-['DM_Sans'] text-[13px] text-[#1A1A1A]/45 font-light leading-relaxed line-clamp-2">
+                  <p className="font-dm text-[14px] text-[#1A1A1A] font-medium">{item.q}</p>
+                  <p className="mt-1.5 font-dm text-[13px] text-[#1A1A1A]/45 font-light leading-relaxed line-clamp-2">
                     {item.a}
                   </p>
                 </motion.div>
@@ -693,7 +664,7 @@ function FaqSection() {
                   className={cn(
                     "group flex items-center gap-4 px-9 py-4",
                     "border border-[#B85C2C] text-[#B85C2C]",
-                    "font-['DM_Sans'] text-[12px] tracking-[0.22em] uppercase",
+                    "font-dm text-[12px] tracking-[0.22em] uppercase",
                     "hover:bg-[#B85C2C] hover:text-white transition-all duration-300",
                   )}
                 >
@@ -721,17 +692,17 @@ function FaqSection() {
                 )}
               >
                 <DialogHeader className="pb-5 border-b border-[#1A1A1A]/8">
-                  <DialogTitle className="font-['Cormorant_Garamond'] text-2xl font-light text-[#1A1A1A]">
+                  <DialogTitle className="font-cormorant text-2xl font-light text-[#1A1A1A]">
                     Questions fréquentes
                   </DialogTitle>
                 </DialogHeader>
                 <div className="pt-5 space-y-6">
                   {FAQ_ITEMS.map((item, i) => (
                     <div key={i} className="pb-6 border-b border-[#1A1A1A]/5 last:border-0 last:pb-0">
-                      <h3 className="font-['DM_Sans'] font-medium text-[#1A1A1A] text-[14px] mb-2.5">
+                      <h3 className="font-dm font-medium text-[#1A1A1A] text-[14px] mb-2.5">
                         {item.q}
                       </h3>
-                      <p className="font-['DM_Sans'] text-[13px] text-[#1A1A1A]/55 leading-relaxed font-light">
+                      <p className="font-dm text-[13px] text-[#1A1A1A]/55 leading-relaxed font-light">
                         {item.a}
                       </p>
                     </div>
@@ -741,7 +712,7 @@ function FaqSection() {
                       href="mailto:wabistudio.contact@gmail.com"
                       className={cn(
                         "inline-flex items-center gap-2 text-[12px] tracking-[0.18em] uppercase",
-                        "font-['DM_Sans'] text-[#B85C2C] border-b border-[#B85C2C]/40",
+                        "font-dm text-[#B85C2C] border-b border-[#B85C2C]/40",
                         "hover:border-[#B85C2C] transition-colors pb-0.5",
                       )}
                     >
@@ -773,18 +744,18 @@ function ContactSection() {
             variants={fadeUp}
             className="lg:max-w-xs shrink-0"
           >
-            <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-5">
+            <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
               Contact
             </p>
-            <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
+            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
               Parlons de
               <br />
               <em className="text-[#B85C2C] not-italic">votre projet.</em>
             </h2>
-            <p className="mt-6 text-[#1A1A1A]/45 font-['DM_Sans'] font-light text-[13px] leading-relaxed">
+            <p className="mt-6 text-[#1A1A1A]/45 font-dm font-light text-[13px] leading-relaxed">
               Une idée, une vision, un projet ? Décrivez-le nous — nous vous répondons sous 48 h.
             </p>
-            <p className="mt-8 font-['DM_Sans'] text-[13px] font-light text-[#1A1A1A]/40">
+            <p className="mt-8 font-dm text-[13px] font-light text-[#1A1A1A]/40">
               Ou directement à{" "}
               <a
                 href="mailto:wabistudio.contact@gmail.com"
@@ -837,11 +808,11 @@ function FooterSection() {
           <div className="max-w-xs">
             <a
               href="/"
-              className="font-['Cormorant_Garamond'] text-2xl font-semibold tracking-[0.28em] text-[#1A1A1A] hover:text-[#B85C2C] transition-colors block mb-6"
+              className="font-cormorant text-2xl font-semibold tracking-[0.28em] text-[#1A1A1A] hover:text-[#B85C2C] transition-colors block mb-6"
             >
               WABI
             </a>
-            <p className="text-[13px] text-[#1A1A1A]/45 font-['DM_Sans'] font-light leading-relaxed mb-8">
+            <p className="text-[13px] text-[#1A1A1A]/45 font-dm font-light leading-relaxed mb-8">
               Studio de design web fondé sur les principes du wabi-sabi.
               <br />
               L&apos;épure comme philosophie, l&apos;excellence comme standard.
@@ -866,7 +837,7 @@ function FooterSection() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 lg:gap-16">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <h4 className="text-[10px] tracking-[0.4em] text-[#1A1A1A]/70 uppercase font-['DM_Sans'] font-medium mb-6">
+                <h4 className="text-[10px] tracking-[0.4em] text-[#1A1A1A]/70 uppercase font-dm font-medium mb-6">
                   {section.title}
                 </h4>
                 <ul className="space-y-3">
@@ -874,7 +845,7 @@ function FooterSection() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-[13px] text-[#1A1A1A]/40 font-['DM_Sans'] hover:text-[#B85C2C] transition-colors duration-300 font-light"
+                        className="text-[13px] text-[#1A1A1A]/40 font-dm hover:text-[#B85C2C] transition-colors duration-300 font-light"
                       >
                         {link.name}
                       </a>
@@ -888,18 +859,18 @@ function FooterSection() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[#1A1A1A]/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[11px] text-[#1A1A1A]/28 font-['DM_Sans']">
+          <p className="text-[11px] text-[#1A1A1A]/28 font-dm">
             © 2025 WABI Studio. Tous droits réservés.
           </p>
           <div className="flex gap-6">
             {[
-              { name: "Mentions légales", href: "#" },
+              { name: "Mentions légales", href: "/mentions-legales" },
               { name: "Confidentialité", href: "#" },
             ].map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[11px] text-[#1A1A1A]/28 font-['DM_Sans'] hover:text-[#B85C2C] transition-colors"
+                className="text-[11px] text-[#1A1A1A]/28 font-dm hover:text-[#B85C2C] transition-colors"
               >
                 {link.name}
               </a>

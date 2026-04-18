@@ -34,7 +34,7 @@ export const TestimonialsColumn = ({
                 key={`${dupIdx}-${i}`}
                 className="p-7 border border-white/10 bg-[#FAFAF8] max-w-xs w-full"
               >
-                <p className="text-[#1A1A1A]/75 font-['DM_Sans'] text-sm leading-relaxed font-light">
+                <p className="text-[#1A1A1A]/75 font-dm text-sm leading-relaxed font-light">
                   &ldquo;{text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 mt-5">
@@ -46,10 +46,10 @@ export const TestimonialsColumn = ({
                     className="h-9 w-9 rounded-full object-cover grayscale"
                   />
                   <div className="flex flex-col">
-                    <span className="font-['DM_Sans'] font-medium text-[#1A1A1A] text-sm leading-tight">
+                    <span className="font-dm font-medium text-[#1A1A1A] text-sm leading-tight">
                       {name}
                     </span>
-                    <span className="font-['DM_Sans'] text-xs text-[#1A1A1A]/45 leading-tight mt-0.5">
+                    <span className="font-dm text-xs text-[#1A1A1A]/45 leading-tight mt-0.5">
                       {role}
                     </span>
                   </div>

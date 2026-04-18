@@ -220,21 +220,21 @@ function DefaultFanCard({ item, active }: { item: CardStackItem; active: boolean
         <img src={item.imageSrc} alt={item.title} className="h-full w-full object-cover" draggable={false} loading="eager" />
       ) : (
         <div className="flex h-full w-full items-center justify-center bg-[#EDE6DA]">
-          <span className="font-['Cormorant_Garamond'] text-4xl text-[#B85C2C]/30 font-light">{item.title[0]}</span>
+          <span className="font-cormorant text-4xl text-[#B85C2C]/30 font-light">{item.title[0]}</span>
         </div>
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
       {item.tag && (
         <div className="absolute top-5 right-5">
-          <span className="text-[10px] tracking-[0.3em] uppercase font-['DM_Sans'] text-white/70 bg-black/20 backdrop-blur-sm px-3 py-1">
+          <span className="text-[10px] tracking-[0.3em] uppercase font-dm text-white/70 bg-black/20 backdrop-blur-sm px-3 py-1">
             {item.tag}
           </span>
         </div>
       )}
       <div className="relative z-10 flex h-full flex-col justify-end p-6">
-        <p className="text-lg font-['Cormorant_Garamond'] font-light text-white leading-tight">{item.title}</p>
+        <p className="text-lg font-cormorant font-light text-white leading-tight">{item.title}</p>
         {item.description && (
-          <p className="mt-1 text-sm font-['DM_Sans'] text-white/60 font-light">{item.description}</p>
+          <p className="mt-1 text-sm font-dm text-white/60 font-light">{item.description}</p>
         )}
       </div>
     </div>

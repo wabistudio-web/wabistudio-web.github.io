@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        cormorant: ["Cormorant Garamond", "Georgia", "serif"],
-        dm: ["DM Sans", "system-ui", "sans-serif"],
+        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
+        dm: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       colors: {
         wabi: {

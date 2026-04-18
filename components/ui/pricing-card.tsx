@@ -55,7 +55,7 @@ export function PricingCard({
       <div>
         <p
           className={cn(
-            "font-['Cormorant_Garamond'] text-sm tracking-[0.35em] mb-6",
+            "font-cormorant text-sm tracking-[0.35em] mb-6",
             highlighted ? "text-[#B85C2C]" : "text-[#B85C2C]",
           )}
         >
@@ -66,7 +66,7 @@ export function PricingCard({
         <div className="mb-6">
           <h3
             className={cn(
-              "font-['Cormorant_Garamond'] text-3xl font-light leading-tight mb-3",
+              "font-cormorant text-3xl font-light leading-tight mb-3",
               highlighted ? "text-[#FAFAF8]" : "text-[#1A1A1A]",
             )}
           >
@@ -74,7 +74,7 @@ export function PricingCard({
           </h3>
           <p
             className={cn(
-              "font-['DM_Sans'] text-[13px] font-light mb-4",
+              "font-dm text-[13px] font-light mb-4",
               highlighted ? "text-[#FAFAF8]/50" : "text-[#1A1A1A]/50",
             )}
           >
@@ -83,7 +83,7 @@ export function PricingCard({
           <div className="flex items-baseline gap-1">
             <span
               className={cn(
-                "font-['Cormorant_Garamond'] text-4xl font-semibold",
+                "font-cormorant text-4xl font-semibold",
                 highlighted ? "text-[#FAFAF8]" : "text-[#1A1A1A]",
               )}
             >
@@ -103,7 +103,7 @@ export function PricingCard({
         {/* Description */}
         <p
           className={cn(
-            "font-['DM_Sans'] text-[13px] font-light leading-relaxed mb-6",
+            "font-dm text-[13px] font-light leading-relaxed mb-6",
             highlighted ? "text-[#FAFAF8]/60" : "text-[#1A1A1A]/55",
           )}
         >
@@ -122,7 +122,7 @@ export function PricingCard({
               />
               <span
                 className={cn(
-                  "font-['DM_Sans'] text-[13px] font-light leading-snug",
+                  "font-dm text-[13px] font-light leading-snug",
                   highlighted ? "text-[#FAFAF8]/70" : "text-[#1A1A1A]/65",
                 )}
               >
@@ -139,7 +139,7 @@ export function PricingCard({
           href={href}
           className={cn(
             "group relative w-full overflow-hidden py-3.5 px-6",
-            "font-['DM_Sans'] text-[12px] tracking-[0.2em] uppercase",
+            "font-dm text-[12px] tracking-[0.2em] uppercase",
             "transition-colors duration-300 flex items-center justify-center gap-2",
             highlighted
               ? "bg-[#B85C2C] text-white hover:bg-[#A04E25]"
@@ -158,7 +158,7 @@ export function PricingCard({
         <button
           className={cn(
             "group relative w-full overflow-hidden py-3.5 px-6",
-            "font-['DM_Sans'] text-[12px] tracking-[0.2em] uppercase",
+            "font-dm text-[12px] tracking-[0.2em] uppercase",
             "transition-colors duration-300 flex items-center justify-center gap-2",
             highlighted
               ? "bg-[#B85C2C] text-white hover:bg-[#A04E25]"

@@ -49,13 +49,13 @@ export function ContactForm() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="py-16"
       >
-        <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-['DM_Sans'] mb-4">
+        <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-4">
           Message envoyé
         </p>
-        <h3 className="font-['Cormorant_Garamond'] text-3xl font-light text-[#1A1A1A]">
+        <h3 className="font-cormorant text-3xl font-light text-[#1A1A1A]">
           Merci pour votre message.
         </h3>
-        <p className="mt-4 font-['DM_Sans'] text-[13px] text-[#1A1A1A]/50 font-light max-w-sm leading-relaxed">
+        <p className="mt-4 font-dm text-[13px] text-[#1A1A1A]/50 font-light max-w-sm leading-relaxed">
           Nous vous répondrons dans les plus brefs délais — généralement sous 24 à 48 heures.
         </p>
       </motion.div>
@@ -64,12 +64,12 @@ export function ContactForm() {
 
   const inputClass = cn(
     "w-full h-11 px-4 bg-transparent border border-[#1A1A1A]/12",
-    "font-['DM_Sans'] text-[13px] text-[#1A1A1A] placeholder:text-[#1A1A1A]/25",
+    "font-dm text-[13px] text-[#1A1A1A] placeholder:text-[#1A1A1A]/25",
     "focus:outline-none focus:border-[#B85C2C] transition-colors duration-300",
   );
 
   const labelClass =
-    "block text-[11px] tracking-[0.3em] uppercase font-['DM_Sans'] text-[#1A1A1A]/55 mb-2";
+    "block text-[11px] tracking-[0.3em] uppercase font-dm text-[#1A1A1A]/55 mb-2";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -128,14 +128,14 @@ export function ContactForm() {
           placeholder="Décrivez votre projet, vos objectifs, votre univers…"
           className={cn(
             "w-full px-4 py-3 bg-transparent border border-[#1A1A1A]/12",
-            "font-['DM_Sans'] text-[13px] text-[#1A1A1A] placeholder:text-[#1A1A1A]/25",
+            "font-dm text-[13px] text-[#1A1A1A] placeholder:text-[#1A1A1A]/25",
             "focus:outline-none focus:border-[#B85C2C] transition-colors duration-300 resize-none",
           )}
         />
       </div>
 
       {errorMsg && (
-        <p className="text-[12px] text-red-400 font-['DM_Sans']">{errorMsg}</p>
+        <p className="text-[12px] text-red-400 font-dm">{errorMsg}</p>
       )}
 
       <button
@@ -144,7 +144,7 @@ export function ContactForm() {
         className={cn(
           "group relative overflow-hidden inline-flex items-center",
           "px-10 py-4 bg-[#B85C2C] text-white",
-          "font-['DM_Sans'] text-[12px] tracking-[0.22em] uppercase",
+          "font-dm text-[12px] tracking-[0.22em] uppercase",
           "disabled:opacity-50 disabled:cursor-not-allowed transition-opacity duration-300",
         )}
       >
