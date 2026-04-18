@@ -865,7 +865,7 @@ function FooterSection() {
           <div className="flex gap-6">
             {[
               { name: "Mentions légales", href: "/mentions-legales" },
-              { name: "Confidentialité", href: "#" },
+              { name: "Confidentialité", href: "/confidentialite" },
             ].map((link) => (
               <a
                 key={link.name}
