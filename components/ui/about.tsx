@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Feather, Zap, Aperture, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,27 +17,8 @@ const TABS = [
     description:
       "Nous éliminons le bruit visuel pour ne garder que l'âme de votre projet. Un design WABI n'est pas seulement minimaliste, il est essentiel. Chaque espace blanc est une respiration, chaque typographie est une intention.",
     cta: "Voir notre esthétique",
-    visual: (
-      <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#F0ECE6]" />
-        <div className="relative flex flex-col items-center gap-6">
-          <div className="w-32 h-32 rounded-full border border-[#B85C2C]/20" />
-          <div className="w-20 h-20 rounded-full border border-[#1A1A1A]/8 absolute" />
-          <div className="w-px h-24 bg-gradient-to-b from-transparent via-[#B85C2C]/30 to-transparent absolute -top-8" />
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#B85C2C]/30 to-transparent absolute" />
-        </div>
-        <div className="absolute bottom-8 left-8 right-8 flex flex-col gap-2">
-          <div className="h-px bg-[#1A1A1A]/8 w-full" />
-          <div className="h-px bg-[#1A1A1A]/5 w-3/4" />
-          <div className="h-px bg-[#1A1A1A]/5 w-1/2" />
-        </div>
-        <div className="absolute top-8 right-8">
-          <span className="font-dm text-[9px] tracking-[0.4em] uppercase text-[#B85C2C]/40">
-            WABI
-          </span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/assets/1.jpg",
+    imageAlt: "Simplicité Volontaire",
   },
   {
     value: "performance",
@@ -47,33 +29,8 @@ const TABS = [
     description:
       "Un site beau ne suffit pas, il doit être rapide et léger. Nous utilisons des technologies modernes (React, Next.js) pour garantir un temps de chargement instantané et une empreinte carbone réduite. Le luxe, c'est aussi la fluidité.",
     cta: "Nos engagements techniques",
-    visual: (
-      <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#1A1A1A]" />
-        <div className="relative grid grid-cols-6 grid-rows-5 gap-px w-[calc(100%-4rem)] h-[calc(100%-4rem)] opacity-15">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div key={i} className="bg-white/20 rounded-[1px]" />
-          ))}
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-1">
-            <span className="font-dm text-[9px] tracking-[0.4em] uppercase text-white/30">
-              Chargement
-            </span>
-            <div className="flex items-end gap-1 h-8">
-              {[40, 70, 55, 90, 65, 80, 100].map((h, i) => (
-                <div
-                  key={i}
-                  className="w-1.5 bg-[#B85C2C]/60 rounded-sm"
-                  style={{ height: `${h}%` }}
-                />
-              ))}
-            </div>
-            <span className="font-cormorant text-xl text-white/60 mt-1">100</span>
-          </div>
-        </div>
-      </div>
-    ),
+    imageSrc: "/assets/2.jpg",
+    imageAlt: "Performance Durable",
   },
   {
     value: "elegance",
@@ -84,33 +41,8 @@ const TABS = [
     description:
       "Nous créons des interactions fluides et des transitions subtiles qui imitent le vivant. Votre site n'est pas une page figée, c'est un prolongement organique de votre savoir-faire, conçu pour évoluer avec vous.",
     cta: "Démarrer un projet",
-    visual: (
-      <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#EDE7DE]" />
-        <div className="absolute w-64 h-64 rounded-full bg-[#B85C2C]/8 blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute w-40 h-40 rounded-full bg-[#B85C2C]/12 blur-2xl top-1/3 left-1/3" />
-        <div className="relative flex flex-col items-center gap-4">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" className="opacity-25">
-            <path
-              d="M10 40 Q20 10 40 20 Q60 30 70 40 Q60 50 40 60 Q20 70 10 40Z"
-              stroke="#B85C2C"
-              strokeWidth="1"
-              fill="none"
-            />
-            <path
-              d="M15 40 Q25 18 40 26 Q55 34 65 40 Q55 46 40 54 Q25 62 15 40Z"
-              stroke="#1A1A1A"
-              strokeWidth="0.5"
-              fill="none"
-              opacity="0.3"
-            />
-          </svg>
-          <span className="font-cormorant text-lg font-light text-[#1A1A1A]/40 tracking-widest italic">
-            vivant.
-          </span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/assets/3.jpg",
+    imageAlt: "Élégance Organique",
   },
 ];
 
@@ -219,8 +151,13 @@ export function AboutSection() {
                   </div>
 
                   {/* Visual side */}
-                  <div className="relative h-64 lg:h-auto min-h-[280px] bg-[#F0ECE6]">
-                    {activeTab.visual}
+                  <div className="relative h-64 lg:h-auto min-h-[280px]">
+                    <Image
+                      src={activeTab.imageSrc}
+                      alt={activeTab.imageAlt}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </Tabs.Content>
               </motion.div>
