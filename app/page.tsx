@@ -11,6 +11,7 @@ import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 import { TestimonialsColumn, type Testimonial } from "@/components/ui/testimonials-column";
 import { PricingCard } from "@/components/ui/pricing-card";
 import { ContactForm } from "@/components/ui/contact-form";
+import { AboutSection } from "@/components/ui/about";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { useScroll } from "@/components/ui/use-scroll";
 import {
@@ -193,7 +194,7 @@ const FOOTER_SECTIONS = [
   {
     title: "Studio",
     links: [
-      { name: "À propos", href: "#" },
+      { name: "À propos", href: "#approche" },
       { name: "Notre approche", href: "#approche" },
       { name: "Réalisations", href: "#realisations" },
     ],
@@ -890,6 +891,7 @@ export default function WABIHomePage() {
       <Header />
       <main>
         <HeroSection />
+        <AboutSection />
         <RealisationsSection />
         <PricingSection />
         <ClientsFeedbackSection />
