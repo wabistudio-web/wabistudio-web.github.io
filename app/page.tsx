@@ -46,13 +46,13 @@ const PLANS = [
   {
     index: "01.",
     title: "L'Instant",
-    price: "750 €",
-    subtitle: "Site One-page — Landing Page",
-    description: "Idéal pour un lancement rapide ou un profil freelance. Tout l'essentiel, sans le superflu.",
+    price: "950 €",
+    subtitle: "Landing Page Essentielle",
+    description: "Le point d'entrée idéal. Une page unique, claire et performante pour lancer votre présence en ligne sans compromis.",
     features: [
-      "Design minimaliste & performant",
-      "Optimisation SEO & Mobile-first",
-      "Idéal pour un lancement ou un profil freelance",
+      "Design minimaliste & épuré (One-page)",
+      "Développement Next.js ultra-rapide",
+      "Optimisation SEO & Responsive",
       "Déploiement inclus",
     ],
     buttonText: "Choisir cette formule",
@@ -60,15 +60,16 @@ const PLANS = [
   },
   {
     index: "02.",
-    title: "L'Étendue",
-    price: "1 450 €",
-    subtitle: "Site Vitrine — 3 à 5 pages",
-    description: "Une présence complète et soignée. Pour les artisans, PME et créatifs qui veulent marquer les esprits.",
+    title: "L'Expérience",
+    price: "1 850 €",
+    subtitle: "Landing Page 3D",
+    description: "Le pack immersif. Une landing page qui marque les esprits grâce à une intégration 3D signature et une narration visuelle unique.",
     features: [
-      "Arborescence complète — Accueil, Services, Portfolio, Contact",
-      "Narration visuelle soignée — Direction Artistique WABI",
-      "Idéal pour artisans, PME et créatifs",
-      "Déploiement inclus",
+      "Intégration Hero 3D (Spline / Three.js)",
+      "Interactions organiques & fluides",
+      "Direction Artistique WABI signature",
+      "Narration visuelle immersive",
+      "Optimisation des assets 3D",
     ],
     buttonText: "Choisir cette formule",
     href: "#contact",
@@ -76,14 +77,31 @@ const PLANS = [
   },
   {
     index: "03.",
+    title: "L'Étendue",
+    price: "2 850 €",
+    subtitle: "Site Vitrine Premium",
+    description: "La présence complète. Un site multi-pages pensé pour construire un univers de marque fort et convertir durablement.",
+    features: [
+      "Arborescence de 3 à 5 pages",
+      "Univers de marque cohérent et profond",
+      "Stratégie SEO avancée",
+      "Animations de transition premium",
+      "Formulaire de contact & outils de conversion",
+    ],
+    buttonText: "Choisir cette formule",
+    href: "#contact",
+  },
+  {
+    index: "04.",
     title: "Le Suivi",
-    price: "35 € / mois",
-    subtitle: "Option Sérénité — Maintenance",
+    price: "60 € / mois",
+    subtitle: "Maintenance & Sérénité",
     description: "Votre site entre de bonnes mains. Tranquillité d'esprit garantie, mois après mois.",
     features: [
-      "Hébergement surveillé & certificat SSL",
-      "Mises à jour mineures & support prioritaire",
-      "Rapport de performance trimestriel",
+      "Hébergement & SSL sécurisé",
+      "Mises à jour techniques & sécurité",
+      "Support prioritaire (24/48h)",
+      "Modifications mineures incluses chaque mois",
     ],
     buttonText: "Ajouter cette option",
     href: "#contact",
@@ -510,7 +528,7 @@ function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.index}
