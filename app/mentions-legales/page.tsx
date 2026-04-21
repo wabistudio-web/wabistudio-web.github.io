@@ -12,7 +12,7 @@ const SECTIONS = [
     items: [
       { label: "Raison sociale", value: "Wladimir BIGAND" },
       { label: "Siège social", value: "155 Av. Jean Jaurès, 47000 Agen" },
-      { label: "SIRET", value: "En cours d'enregistrement" },
+      { label: "SIRET", value: "10392639000016" },
       { label: "Email", value: "contact@wabistudio.fr", href: "mailto:contact@wabistudio.fr" },
       { label: "Directeur de la publication", value: "Wladimir BIGAND" },
     ],
