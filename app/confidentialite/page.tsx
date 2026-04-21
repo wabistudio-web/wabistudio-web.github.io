@@ -15,8 +15,8 @@ const SECTIONS: { number: string; title: string; body?: string; items?: SectionI
     items: [
       {
         label: "Contact",
-        value: "wabistudio.contact@gmail.com",
-        href: "mailto:wabistudio.contact@gmail.com",
+        value: "contact@wabistudio.fr",
+        href: "mailto:contact@wabistudio.fr",
       },
     ],
   },
@@ -101,8 +101,8 @@ const SECTIONS: { number: string; title: string; body?: string; items?: SectionI
       { label: "Opposition", value: "Droit d'opposition au traitement de vos données." },
       {
         label: "Exercer vos droits",
-        value: "wabistudio.contact@gmail.com",
-        href: "mailto:wabistudio.contact@gmail.com",
+        value: "contact@wabistudio.fr",
+        href: "mailto:contact@wabistudio.fr",
       },
     ],
   },

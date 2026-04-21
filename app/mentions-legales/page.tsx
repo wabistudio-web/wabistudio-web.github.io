@@ -13,7 +13,7 @@ const SECTIONS = [
       { label: "Raison sociale", value: "Wladimir BIGAND" },
       { label: "Siège social", value: "155 Av. Jean Jaurès, 47000 Agen" },
       { label: "SIRET", value: "En cours d'enregistrement" },
-      { label: "Email", value: "wabistudio.contact@gmail.com", href: "mailto:wabistudio.contact@gmail.com" },
+      { label: "Email", value: "contact@wabistudio.fr", href: "mailto:contact@wabistudio.fr" },
       { label: "Directeur de la publication", value: "Wladimir BIGAND" },
     ],
   },
@@ -38,7 +38,7 @@ const SECTIONS = [
     items: [
       { label: "Finalité", value: "Les données collectées via le formulaire de contact servent uniquement à répondre à vos demandes de prestations." },
       { label: "Conservation", value: "Les données sont conservées pendant une durée maximale de 3 ans après le dernier contact." },
-      { label: "Droits", value: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : wabistudio.contact@gmail.com." },
+      { label: "Droits", value: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : contact@wabistudio.fr." },
     ],
   },
   {

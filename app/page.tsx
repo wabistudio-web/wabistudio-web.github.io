@@ -229,7 +229,7 @@ const FOOTER_SECTIONS = [
     title: "Contact",
     links: [
       { name: "Démarrer un projet", href: "#contact" },
-      { name: "wabistudio.contact@gmail.com", href: "mailto:wabistudio.contact@gmail.com" },
+      { name: "contact@wabistudio.fr", href: "mailto:contact@wabistudio.fr" },
       { name: "Paris, France", href: "#" },
     ],
   },
@@ -728,7 +728,7 @@ function FaqSection() {
                   ))}
                   <div className="pt-2">
                     <a
-                      href="mailto:wabistudio.contact@gmail.com"
+                      href="mailto:contact@wabistudio.fr"
                       className={cn(
                         "inline-flex items-center gap-2 text-[12px] tracking-[0.18em] uppercase",
                         "font-dm text-[#B85C2C] border-b border-[#B85C2C]/40",
@@ -777,10 +777,10 @@ function ContactSection() {
             <p className="mt-8 font-dm text-[13px] font-light text-[#1A1A1A]/40">
               Ou directement à{" "}
               <a
-                href="mailto:wabistudio.contact@gmail.com"
+                href="mailto:contact@wabistudio.fr"
                 className="text-[#B85C2C] border-b border-[#B85C2C]/30 hover:border-[#B85C2C] transition-colors pb-0.5"
               >
-                wabistudio.contact@gmail.com
+                contact@wabistudio.fr
               </a>
             </p>
           </motion.div>
