@@ -51,8 +51,8 @@ export function AboutSection() {
   const activeTab = TABS.find((t) => t.value === active)!;
 
   return (
-    <section id="approche" className="py-32 bg-[#FAFAF8]">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id="approche" className="py-16 sm:py-32 bg-[#FAFAF8]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -123,7 +123,7 @@ export function AboutSection() {
               >
                 <Tabs.Content value={activeTab.value} forceMount className="grid lg:grid-cols-2">
                   {/* Text side */}
-                  <div className="flex flex-col justify-center gap-5 p-10 lg:p-16">
+                  <div className="flex flex-col justify-center gap-5 p-6 sm:p-10 lg:p-16">
                     <p className="font-dm text-[10px] tracking-[0.45em] uppercase text-[#B85C2C]">
                       {activeTab.badge}
                     </p>

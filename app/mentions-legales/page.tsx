@@ -57,8 +57,8 @@ export default function MentionsLegales() {
   return (
     <div className="min-h-screen bg-[#FAFAF8] antialiased">
       {/* Header */}
-      <header className="border-b border-[#1A1A1A]/6 px-8 py-6">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+      <header className="border-b border-[#1A1A1A]/6 px-5 sm:px-8 py-6">
+        <div className="max-w-4xl mx-auto px-5 sm:px-0 flex items-center justify-between">
           <a
             href="/"
             className="font-cormorant text-xl font-semibold tracking-[0.3em] text-[#1A1A1A] hover:text-[#B85C2C] transition-colors duration-300"
@@ -77,7 +77,7 @@ export default function MentionsLegales() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-8 py-20">
+      <main className="max-w-4xl mx-auto px-5 sm:px-8 py-12 sm:py-20">
         {/* Title */}
         <div className="mb-16">
           <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
@@ -149,7 +149,7 @@ export default function MentionsLegales() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#1A1A1A]/5 px-8 py-8 mt-8">
+      <footer className="border-t border-[#1A1A1A]/5 px-5 sm:px-8 py-8 mt-8">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-dm text-[11px] text-[#1A1A1A]/28">
             © 2025 WABI Studio. Tous droits réservés.

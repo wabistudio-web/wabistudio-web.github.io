@@ -259,7 +259,7 @@ function Header() {
               : "bg-transparent py-6",
         )}
       >
-        <nav className="max-w-6xl mx-auto px-8 flex items-center justify-between">
+        <nav className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <Image
@@ -362,7 +362,7 @@ function Header() {
 function HeroSection() {
   return (
     <SpotlightBackground>
-      <section className="min-h-screen flex flex-col items-center justify-center px-8">
+      <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8">
         <div className="text-center max-w-5xl mx-auto w-full">
           {/* Brand label */}
           <div className="hero-1 mb-10 flex items-center justify-center gap-4">
@@ -391,11 +391,11 @@ function HeroSection() {
           </div>
 
           {/* CTA */}
-          <div className="hero-4 mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="hero-4 mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto">
             <a
               href="#contact"
               className={cn(
-                "group relative overflow-hidden inline-flex items-center",
+                "group relative overflow-hidden inline-flex items-center justify-center",
                 "px-9 py-4 bg-[#B85C2C] text-white",
                 "font-dm text-[12px] tracking-[0.22em] uppercase",
               )}
@@ -410,7 +410,7 @@ function HeroSection() {
             <a
               href="#realisations"
               className={cn(
-                "inline-block px-9 py-4 border border-[#1A1A1A]/18 text-[#1A1A1A]/65",
+                "inline-flex items-center justify-center px-9 py-4 border border-[#1A1A1A]/18 text-[#1A1A1A]/65",
                 "font-dm text-[12px] tracking-[0.22em] uppercase",
                 "hover:border-[#B85C2C] hover:text-[#B85C2C] transition-all duration-300",
               )}
@@ -456,8 +456,8 @@ function RealisationsSection() {
   }, []);
 
   return (
-    <section id="realisations" className="hidden sm:block py-32 bg-[#FAFAF8]">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id="realisations" className="hidden sm:block py-16 sm:py-32 bg-[#FAFAF8]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -506,8 +506,8 @@ function RealisationsSection() {
 
 function PricingSection() {
   return (
-    <section id="tarifs" className="py-32 bg-[#F5F2EE]">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id="tarifs" className="py-16 sm:py-32 bg-[#F5F2EE]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -584,8 +584,8 @@ function ClientsFeedbackSection() {
   const col3 = TESTIMONIALS.slice(4, 6);
 
   return (
-    <section id="avis" className="py-32 bg-[#1A1A1A] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id="avis" className="py-16 sm:py-32 bg-[#1A1A1A] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -625,9 +625,9 @@ function ClientsFeedbackSection() {
 
 function FaqSection() {
   return (
-    <section id="approche" className="py-32 bg-[#FAFAF8]">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-16">
+    <section id="faq" className="py-16 sm:py-32 bg-[#FAFAF8]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16">
           {/* Left: heading */}
           <motion.div
             initial="hidden"
@@ -752,9 +752,9 @@ function FaqSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="py-32 bg-[#F5F2EE]">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="flex flex-col lg:flex-row items-start gap-20">
+    <section id="contact" className="py-16 sm:py-32 bg-[#F5F2EE]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-20">
           {/* Left: heading */}
           <motion.div
             initial="hidden"
@@ -819,17 +819,20 @@ function FooterSection() {
 
   return (
     <footer
-      className="bg-[#FAFAF8] border-t border-[#1A1A1A]/6 pt-20 pb-10 px-8"
+      className="bg-[#FAFAF8] border-t border-[#1A1A1A]/6 pt-12 sm:pt-20 pb-10 px-5 sm:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between gap-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16">
           {/* Brand column — footer adapted from footer.txt (Footer7) */}
           <div className="max-w-xs">
-            <a
-              href="/"
-              className="font-cormorant text-2xl font-semibold tracking-[0.28em] text-[#1A1A1A] hover:text-[#B85C2C] transition-colors block mb-6"
-            >
-              WABI
+            <a href="/" className="block mb-6">
+              <Image
+                src="/assets/BannerWABI.png"
+                alt="WABI Studio"
+                width={120}
+                height={24}
+                className="h-6 w-auto object-contain"
+              />
             </a>
             <p className="text-[13px] text-[#1A1A1A]/45 font-dm font-light leading-relaxed mb-8">
               Studio de design web fondé sur les principes du wabi-sabi.
@@ -853,7 +856,7 @@ function FooterSection() {
           </div>
 
           {/* Footer links */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-10 lg:gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-16">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
                 <h4 className="text-[10px] tracking-[0.4em] text-[#1A1A1A]/70 uppercase font-dm font-medium mb-6">
@@ -879,7 +882,7 @@ function FooterSection() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[#1A1A1A]/5 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[11px] text-[#1A1A1A]/28 font-dm">
-            © 2025 WABI Studio. Tous droits réservés.
+            © 2026 WABI Studio. Tous droits réservés.
           </p>
           <div className="flex gap-6">
             {[
