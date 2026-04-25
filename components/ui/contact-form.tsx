@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CTAButton } from "@/components/ui/cta-button";
 
 type FormState = "idle" | "submitting" | "succeeded" | "error";
 
@@ -138,23 +138,13 @@ export function ContactForm() {
         <p className="text-[12px] text-red-400 font-dm">{errorMsg}</p>
       )}
 
-      <button
+      <CTAButton
         type="submit"
         disabled={state === "submitting"}
-        className={cn(
-          "group relative overflow-hidden inline-flex items-center",
-          "px-10 py-4 bg-[#B85C2C] text-white",
-          "font-dm text-[12px] tracking-[0.22em] uppercase",
-          "disabled:opacity-50 disabled:cursor-not-allowed transition-opacity duration-300",
-        )}
-      >
-        <span className="mr-10 transition-opacity duration-500 group-hover:opacity-0">
-          {state === "submitting" ? "Envoi…" : "Envoyer le message"}
-        </span>
-        <i className="absolute right-1 top-1 bottom-1 grid w-9 place-items-center transition-all duration-500 bg-white/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-          <ChevronRight size={15} />
-        </i>
-      </button>
+        label={state === "submitting" ? "Envoi…" : "Envoyer le message"}
+        variant="filled"
+        size="lg"
+      />
     </form>
   );
 }

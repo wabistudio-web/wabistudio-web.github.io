@@ -3,7 +3,8 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Diamond, ChevronRight } from "lucide-react";
+import { Diamond } from "lucide-react";
+import { CTAButton } from "@/components/ui/cta-button";
 
 interface PricingCardProps {
   index: string;
@@ -134,46 +135,13 @@ export function PricingCard({
       </div>
 
       {/* CTA */}
-      {href ? (
-        <a
-          href={href}
-          className={cn(
-            "group relative w-full overflow-hidden py-3.5 px-6",
-            "font-dm text-[12px] tracking-[0.2em] uppercase",
-            "transition-colors duration-300 flex items-center justify-center gap-2",
-            highlighted
-              ? "bg-[#B85C2C] text-white hover:bg-[#A04E25]"
-              : "border border-[#B85C2C] text-[#B85C2C] hover:bg-[#B85C2C] hover:text-white",
-          )}
-        >
-          <span className="transition-all duration-300 group-hover:translate-x-[-4px]">
-            {buttonText}
-          </span>
-          <ChevronRight
-            size={13}
-            className="transition-all duration-300 opacity-60 group-hover:opacity-100 group-hover:translate-x-1"
-          />
-        </a>
-      ) : (
-        <button
-          className={cn(
-            "group relative w-full overflow-hidden py-3.5 px-6",
-            "font-dm text-[12px] tracking-[0.2em] uppercase",
-            "transition-colors duration-300 flex items-center justify-center gap-2",
-            highlighted
-              ? "bg-[#B85C2C] text-white hover:bg-[#A04E25]"
-              : "border border-[#B85C2C] text-[#B85C2C] hover:bg-[#B85C2C] hover:text-white",
-          )}
-        >
-          <span className="transition-all duration-300 group-hover:translate-x-[-4px]">
-            {buttonText}
-          </span>
-          <ChevronRight
-            size={13}
-            className="transition-all duration-300 opacity-60 group-hover:opacity-100 group-hover:translate-x-1"
-          />
-        </button>
-      )}
+      <CTAButton
+        href={href}
+        label={buttonText}
+        variant={highlighted ? "filled" : "outline"}
+        size="md"
+        className="w-full justify-center"
+      />
     </motion.div>
   );
 }

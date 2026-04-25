@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Feather, Zap, Aperture, ChevronRight } from "lucide-react";
+import { Feather, Zap, Aperture } from "lucide-react";
+import { CTAButton } from "@/components/ui/cta-button";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -133,21 +134,13 @@ export function AboutSection() {
                     <p className="font-dm text-[13px] text-[#1A1A1A]/55 font-light leading-relaxed">
                       {activeTab.description}
                     </p>
-                    <a
+                    <CTAButton
                       href="#contact"
-                      className={cn(
-                        "group relative overflow-hidden inline-flex items-center mt-2",
-                        "px-8 py-3.5 bg-[#B85C2C] text-white w-fit",
-                        "font-dm text-[11px] tracking-[0.22em] uppercase transition-opacity duration-300",
-                      )}
-                    >
-                      <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">
-                        {activeTab.cta}
-                      </span>
-                      <i className="absolute right-1 top-1 bottom-1 grid w-8 place-items-center transition-all duration-500 bg-white/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-                        <ChevronRight size={13} />
-                      </i>
-                    </a>
+                      label={activeTab.cta}
+                      variant="filled"
+                      size="md"
+                      className="mt-2 w-fit"
+                    />
                   </div>
 
                   {/* Visual side */}

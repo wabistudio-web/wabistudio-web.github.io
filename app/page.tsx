@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CTAButton } from "@/components/ui/cta-button";
 import SpotlightBackground from "@/components/ui/spotlight-background";
 import AnimatedTextCycle from "@/components/ui/animated-text-cycle";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
@@ -317,22 +317,7 @@ function Header() {
               </a>
             ))}
             {/* CTA — GetStartedButton animation from CTA_button.txt */}
-            <a
-              href="#contact"
-              className={cn(
-                "group relative overflow-hidden inline-flex items-center",
-                "text-[12px] tracking-[0.18em] uppercase font-dm",
-                "border border-[#B85C2C] text-[#B85C2C] px-6 py-2.5",
-                "hover:text-white transition-colors duration-500",
-              )}
-            >
-              <span className="relative z-10 mr-6 transition-opacity duration-500 group-hover:opacity-0">
-                Démarrer
-              </span>
-              <i className="absolute right-0.5 top-0.5 bottom-0.5 z-10 grid w-8 place-items-center transition-all duration-500 bg-[#B85C2C]/20 group-hover:w-[calc(100%-0.25rem)] group-hover:bg-[#B85C2C]">
-                <ChevronRight size={13} />
-              </i>
-            </a>
+            <CTAButton href="#contact" label="Démarrer" variant="outline" size="sm" />
           </div>
 
           {/* Mobile hamburger — MenuToggleIcon from header.txt */}
@@ -375,13 +360,14 @@ function Header() {
                   </a>
                 ))}
               </div>
-              <a
+              <CTAButton
                 href="#contact"
+                label="Démarrer un projet"
+                variant="filled"
+                size="lg"
                 onClick={() => setOpen(false)}
-                className="py-4 text-center text-[12px] tracking-[0.25em] uppercase font-dm bg-[#B85C2C] text-white hover:bg-[#A04E25] transition-colors"
-              >
-                Démarrer un projet
-              </a>
+                className="w-full justify-center"
+              />
             </div>
           </motion.div>
         )}
@@ -425,31 +411,8 @@ function HeroSection() {
 
           {/* CTA */}
           <div className="hero-4 mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto">
-            <a
-              href="#contact"
-              className={cn(
-                "group relative overflow-hidden inline-flex items-center justify-center",
-                "px-9 py-4 bg-[#B85C2C] text-white",
-                "font-dm text-[12px] tracking-[0.22em] uppercase",
-              )}
-            >
-              <span className="mr-10 transition-opacity duration-500 group-hover:opacity-0">
-                Démarrer un projet
-              </span>
-              <i className="absolute right-1 top-1 bottom-1 z-10 grid w-9 place-items-center transition-all duration-500 bg-white/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-                <ChevronRight size={15} />
-              </i>
-            </a>
-            <a
-              href="#realisations"
-              className={cn(
-                "inline-flex items-center justify-center px-9 py-4 border border-[#1A1A1A]/18 text-[#1A1A1A]/65",
-                "font-dm text-[12px] tracking-[0.22em] uppercase",
-                "hover:border-[#B85C2C] hover:text-[#B85C2C] transition-all duration-300",
-              )}
-            >
-              Voir les réalisations
-            </a>
+            <CTAButton href="#contact" label="Démarrer un projet" variant="filled" size="lg" />
+            <CTAButton href="#realisations" label="Voir les réalisations" variant="outline-dark" size="lg" />
           </div>
         </div>
 
@@ -628,18 +591,7 @@ function PricingSection() {
               Parlez-nous de votre vision — nous construisons des solutions sur-mesure.
             </p>
           </div>
-          <a
-            href="#contact"
-            className={cn(
-              "group relative overflow-hidden inline-flex items-center shrink-0",
-              "px-8 py-3.5 border border-[#1A1A1A]/20 text-[#1A1A1A]",
-              "font-dm text-[12px] tracking-[0.2em] uppercase",
-              "hover:border-[#B85C2C] hover:text-[#B85C2C] transition-all duration-300",
-            )}
-          >
-            Discutons-en
-            <ChevronRight size={13} className="ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-          </a>
+          <CTAButton href="#contact" label="Discutons-en" variant="outline-dark" size="md" className="shrink-0" />
         </motion.div>
       </div>
     </section>
@@ -749,29 +701,7 @@ function FaqSection() {
 
             <Dialog>
               <DialogTrigger asChild>
-                <button
-                  className={cn(
-                    "group flex items-center gap-4 px-9 py-4",
-                    "border border-[#B85C2C] text-[#B85C2C]",
-                    "font-dm text-[12px] tracking-[0.22em] uppercase",
-                    "hover:bg-[#B85C2C] hover:text-white transition-all duration-300",
-                  )}
-                >
-                  <span>Voir toutes les questions</span>
-                  <svg
-                    width={13}
-                    height={13}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
+                <CTAButton label="Voir toutes les questions" variant="outline" size="lg" />
               </DialogTrigger>
 
               <DialogContent
