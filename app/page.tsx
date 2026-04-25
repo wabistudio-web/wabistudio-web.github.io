@@ -91,19 +91,52 @@ const PLANS = [
     buttonText: "Choisir cette formule",
     href: "#contact",
   },
+];
+
+const UPDATE_PLANS = [
   {
-    index: "04.",
-    title: "Le Suivi",
-    price: "60 € / mois",
-    subtitle: "Maintenance & Sérénité",
-    description: "Votre site entre de bonnes mains. Tranquillité d'esprit garantie, mois après mois.",
+    index: "01.",
+    title: "L'Ajustement",
+    price: "À partir de 50 €",
+    subtitle: "Petite intervention",
+    description: "Textes, images, couleurs, corrections mineures.",
     features: [
-      "Hébergement & SSL sécurisé",
-      "Mises à jour techniques & sécurité",
-      "Support prioritaire (24/48h)",
-      "Modifications mineures incluses chaque mois",
+      "Modification de textes & images",
+      "Ajustements couleurs & typographie",
+      "Corrections mineures",
+      "Délai 24/48h",
     ],
-    buttonText: "Ajouter cette option",
+    buttonText: "Demander un ajustement",
+    href: "#contact",
+  },
+  {
+    index: "02.",
+    title: "L'Évolution",
+    price: "À partir de 150 €",
+    subtitle: "Chantier moyen",
+    description: "Nouvelle section, refonte d'une page, fonctionnalité simple.",
+    features: [
+      "Ajout d'une nouvelle section",
+      "Refonte d'une page existante",
+      "Fonctionnalité simple",
+      "Délai 3 à 5 jours",
+    ],
+    buttonText: "Demander une évolution",
+    href: "#contact",
+    highlighted: true,
+  },
+  {
+    index: "03.",
+    title: "Le Chantier",
+    price: "Sur devis",
+    subtitle: "Gros projet",
+    description: "Refonte partielle, nouvelles pages, intégrations complexes.",
+    features: [
+      "Refonte partielle du site",
+      "Création de nouvelles pages",
+      "Intégrations complexes",
+    ],
+    buttonText: "Demander un devis",
     href: "#contact",
   },
 ];
@@ -541,6 +574,43 @@ function PricingSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Modifications & mises à jour */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeUp}
+          className="mt-24"
+        >
+          <div className="mb-3">
+            <p className="text-[11px] tracking-[0.55em] text-[#B85C2C] uppercase font-dm mb-5">
+              Modifications & mises à jour
+            </p>
+            <h3 className="font-cormorant text-3xl md:text-4xl font-light text-[#1A1A1A] leading-tight mb-4">
+              Votre site évolue,
+              <br />
+              <em className="text-[#B85C2C] not-italic">nous l&apos;accompagnons.</em>
+            </h3>
+            <p className="font-dm text-[13px] text-[#1A1A1A]/55 font-light leading-relaxed max-w-2xl">
+              Vous avez un cahier des charges ? Partagez-le nous, nous l&apos;évaluons et vous proposons un devis sous 48h. Les tarifs ci-dessous sont des ordres de grandeur.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            {UPDATE_PLANS.map((plan, i) => (
+              <motion.div
+                key={plan.index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <PricingCard {...plan} href={plan.href} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Custom project nudge */}
         <motion.div
